@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmolLM2 AI Chatbot</title>
+    <!-- Stylesheet link pointing to FastAPI static mount -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <div class="chat-container">
+        <!-- Header -->
+        <header class="chat-header">
+            <h2>SmolLM2 Assistant</h2>
+            <span class="status-indicator">Online</span>
+        </header>
+
+        <!-- Message Display Window -->
+        <div id="messages-container" class="messages-container">
+            <!-- Welcome message rendered on load -->
+            <div class="message aibot">
+                <img src="/static/images/Bot_logo.png" alt="Bot avatar" onerror="this.remove()">
+                <p>Hello! How can I help you today?</p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <!-- Input Form -->
+        <form id="message-form" class="message-form">
+            <input 
+                type="text" 
+                id="message-input" 
+                placeholder="Type your message..." 
+                autocomplete="off"
+                required
+            >
+            <button type="submit" id="send-btn">Send</button>
+        </form>
+    </div>
+
+    <!-- Main JavaScript Logic -->
+    <script src="/static/js/scripts.js"></script>
+</body>
+</html>

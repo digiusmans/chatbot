@@ -1,0 +1,196 @@
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Chat Layout Container */
+.chat-container {
+    width: 100%;
+    max-width: 800px;
+    height: 85vh;
+    background-color: #1e293b;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #334155;
+}
+
+/* Header */
+.chat-header {
+    background-color: #0f172a;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+}
+
+.chat-header h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #38bdf8;
+}
+
+.status-indicator {
+    font-size: 0.8rem;
+    color: #4ade80;
+    background-color: rgba(74, 222, 128, 0.1);
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+/* Messages Scrollable Area */
+.messages-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Message Bubble Formatting */
+.message {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 80%;
+}
+
+.message img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #475569;
+}
+
+.message p {
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+/* Role Specific Alignments */
+.message.user {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.message.user p {
+    background-color: #0284c7;
+    color: #ffffff;
+    border-bottom-right-radius: 2px;
+}
+
+.message.aibot {
+    align-self: flex-start;
+}
+
+.message.aibot p {
+    background-color: #334155;
+    color: #f1f5f9;
+    border-bottom-left-radius: 2px;
+}
+
+.message.error {
+    align-self: center;
+    max-width: 90%;
+}
+
+.message.error p {
+    background-color: #7f1d1d;
+    color: #fecaca;
+    border: 1px solid #991b1b;
+}
+
+/* Loading Indicator */
+.loading-animation {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #38bdf8;
+    margin-left: 48px;
+    animation: pulse 1s infinite alternate;
+}
+
+.loading-text {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-left: 48px;
+    margin-top: -10px;
+    font-style: italic;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    100% { transform: scale(1.2); opacity: 1; }
+}
+
+/* Form & Input Field */
+.message-form {
+    padding: 16px;
+    background-color: #0f172a;
+    border-top: 1px solid #334155;
+    display: flex;
+    gap: 12px;
+}
+
+.message-form input {
+    flex: 1;
+    padding: 12px 16px;
+    background-color: #1e293b;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    color: #f8fafc;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.message-form input:focus {
+    border-color: #38bdf8;
+}
+
+.message-form button {
+    padding: 12px 24px;
+    background-color: #0284c7;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.message-form button:hover {
+    background-color: #0369a1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .chat-container {
+        height: 95vh;
+    }
+    .message {
+        max-width: 90%;
+    }
+}
